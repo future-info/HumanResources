@@ -3,8 +3,7 @@ module V1
   class HomeApi < Grape::API
     version "v1"
     
-    desc: "test"
-    get "test" do
+    get "/test" do
       present({success: 'yes'})
     end
   end
