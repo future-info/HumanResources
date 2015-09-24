@@ -1,5 +1,8 @@
 source 'http://ruby.taobao.org'
 
+gem 'mysql2'
+gem 'therubyracer'
+gem 'activerecord-mysql2-adapter'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
