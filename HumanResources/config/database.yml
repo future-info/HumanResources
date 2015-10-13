@@ -9,6 +9,7 @@ default: &default
   pool: 5
   username: root
   timeout: 5000
+  encoding: utf8
 
 development:
   <<: *default
