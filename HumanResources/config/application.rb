@@ -24,5 +24,6 @@ module HumanResources
     config.active_record.raise_in_transactional_callbacks = true
     config.paths.add "app/api", :glob => "**/*.rb"
     config.autoload_paths += %W(#{config.root}/app/**/*)
+    config.encoding = "utf-8"
   end
 end
