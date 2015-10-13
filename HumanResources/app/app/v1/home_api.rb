@@ -7,7 +7,7 @@ module V1
     end
 
     get "get_careers" do
-      present({:result => Setting.all_career})
+      present({:result => Setting.all_careers})
     end
 
     get "users_list" do 
