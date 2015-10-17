@@ -1,0 +1,14 @@
+<% content_for :my_center_detail do %>
+  <% if @user.career %>
+    <fieldset>
+       <legend>职业信息</legend> 
+       <p><label>职业： </label><%= @user.career_name %></p>
+       <p><label>从业时间： </label><%= @user.career_years_name %></p>
+       <p><label>自我简介： </label><%= @user.desc %></p>
+       
+       <button type="submit" class="btn">提交</button>
+    </fieldset>
+  <% else %>
+    立刻补充信息，让别人找到你：<%= link_to '补充信息', new_detail_user_path(current_user) %>
+  <% end %>
+<%end %>

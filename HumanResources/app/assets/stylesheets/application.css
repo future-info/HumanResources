@@ -12,4 +12,6 @@
  *
  *= require_tree .
  *= require_self
+ *= bootstrap/bootstrap-theme.css
+ *= bootstrap/bootstrap.css
  */
