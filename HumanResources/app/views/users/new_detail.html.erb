@@ -1,0 +1,12 @@
+<% content_for :my_center_detail do %>
+  <%= form_for @user, :url => create_detail_user_path(@user), :method => :post do|f| %>
+    <fieldset>
+       <legend>职业信息</legend> 
+       <p><label>职业： </label><%= f.select :career, options_for_select(Setting.all_careers) %></p>
+       <p><label>从业时间： </label><%= f.select :career_years, options_for_select(career_years_options) %></p>
+       <p><label>自我简介： </label><%= f.text_area :desc, :size=>"20x5" %></p>
+       
+       <button type="submit" class="btn">提交</button>
+    </fieldset>
+  <% end %>
+<%end %>

@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  root 'home#index'
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
+  resources :users do 
+    member do
+      get 'my_center'
+      get 'new_detail'
+      post 'create_detail'
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,6 +66,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root 'home#index'
+  #root 'home#index'
   mount API => "/"
 end

@@ -16,12 +16,32 @@ module V1
       @users.each do |user|
         users << {
           :id => user.id,
-          :name => user.user_name,
-          :phone => user.phone_number,
-          :career => user.career
+          :name => user.user_name || "",
+          :phone => user.phone_number || "",
+          :career => user.career,
+          :career_name => user.career_name,
+          :career_years => user.career_years,
+          :email => user.email
         }
       end
       present(:users => users)
+    end
+
+    get "/users/:id" do
+      @user = User.find(params[:id])
+      result = {}
+      if @user
+        result = {
+          :id => @user.id,
+          :name => @user.user_name || "",
+          :phone => @user.phone_number || "",
+          :career => @user.career,
+          :career_name => @user.career_name,
+          :career_years => @user.career_years,
+          :email => @user.email
+        }
+      end
+      present(:user => result)
     end
 
   end

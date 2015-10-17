@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>用户中心</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="row-fluid">
+          <div class="col-xs-2">
+            <img alt="140x140" src="img/a.jpg" />
+          </div>
+          <div class="col-xs-10">
+          基本信息<br/>
+          用户：<%= @user.user_name%><br/>
+          Email：<%= @user.email%><br/>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="col-xs-2">
+            <ul>
+              <li>详细信息</li>
+            </ul>
+          </div>
+          <div class="col-xs-10">
+            <%= yield :my_center_detail %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

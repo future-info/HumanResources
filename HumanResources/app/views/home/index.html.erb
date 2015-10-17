@@ -1,1 +1,9 @@
-fuck you!
+<% content_for :content_body do %>
+  fuck you!
+  <% if user_signed_in? %>
+    <%= link_to current_user.user_name, my_center_user_path(current_user) %>
+    <%= link_to 'logout', destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%=link_to '登录', new_user_session_path %>
+  <% end %>
+<%end %>
